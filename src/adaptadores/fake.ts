@@ -22,9 +22,15 @@ export class ModeloFake implements ModeloIA {
       throw new Error(`${this.nome}: falha simulada`);
     }
     const texto = conteudo.texto;
-    const primeiraLinha = (texto.split('\n')[0] ?? texto).trim();
+    const linhas = texto.split('\n');
+    const principal =
+      linhas.find((l) => /^(Transcrição do áudio|Descrição da imagem|Quadro 1): /.test(l)) ?? linhas[0] ?? texto;
+    const limpa = principal
+      .replace(/^(Transcrição do áudio|Descrição da imagem|Quadro 1): /, '')
+      .replace(/\[falha-[a-z]+\]\s*/g, '')
+      .trim();
     return {
-      titulo: resumir(primeiraLinha, 80),
+      titulo: resumir(limpa, 80),
       local: detectarLocal(texto),
       prioridade: detectarPrioridade(texto),
       descricao: `${texto}\n\n(Aviso de ${conteudo.autor}, via ${conteudo.tipo}.)`,
