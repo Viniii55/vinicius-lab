@@ -1,0 +1,25 @@
+name: robo-suporte-whatsapp
+
+on:
+  push:
+    paths: ["robo-suporte-whatsapp/**", ".github/workflows/robo-suporte-whatsapp.yml"]
+  pull_request:
+    paths: ["robo-suporte-whatsapp/**", ".github/workflows/robo-suporte-whatsapp.yml"]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: robo-suporte-whatsapp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: robo-suporte-whatsapp/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm test
