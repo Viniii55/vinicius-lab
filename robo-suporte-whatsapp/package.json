@@ -1,0 +1,33 @@
+{
+  "name": "robo-suporte-whatsapp",
+  "version": "0.1.0",
+  "description": "Recebe avisos de problema por mensagem (texto, áudio, imagem, vídeo), transforma em tarefa com IA e garante que nenhuma mensagem se perde.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "tsx --env-file-if-exists=.env src/servidor.ts",
+    "demo": "tsx src/demo.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "fastify": "^5.12.8",
+    "nodemailer": "^10.6.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "@types/nodemailer": "^8.0.2",
+    "eslint": "^10.15.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.1"
+  }
+}

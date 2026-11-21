@@ -1,0 +1,11 @@
+{
+  "transcricoes": {
+    "https://exemplo.invalid/midia/audio-camara-fria.ogg": "A câmara fria 1 está com temperatura alta desde cedo, a porta não fecha direito."
+  },
+  "descricoes": {
+    "https://exemplo.invalid/midia/goteira-recebimento.jpg": "Goteira constante caindo sobre a esteira da doca de recebimento.",
+    "https://exemplo.invalid/midia/forno.mp4#quadro1": "Forno aberto, chama irregular no lado esquerdo.",
+    "https://exemplo.invalid/midia/forno.mp4#quadro2": "Resistência quebrada visível junto à parede do forno.",
+    "https://exemplo.invalid/midia/forno.mp4#quadro3": "Bandejas paradas dentro do forno, sem movimento."
+  }
+}
