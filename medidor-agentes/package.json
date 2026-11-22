@@ -1,0 +1,17 @@
+{
+  "name": "medidor-agentes",
+  "version": "0.1.0",
+  "description": "Mede se uma correção feita por IA resolveu a causa do bug ou só o que o teste mostrava.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "demo": "node bin/demo.mjs",
+    "conferir": "node bin/conferir.mjs",
+    "preparar": "node bin/preparar.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

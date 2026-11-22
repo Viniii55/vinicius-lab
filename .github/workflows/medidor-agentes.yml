@@ -1,0 +1,21 @@
+name: medidor-agentes
+
+on:
+  push:
+    paths: ["medidor-agentes/**", ".github/workflows/medidor-agentes.yml"]
+  pull_request:
+    paths: ["medidor-agentes/**", ".github/workflows/medidor-agentes.yml"]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: medidor-agentes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run demo
